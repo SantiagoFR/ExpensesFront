@@ -4,12 +4,11 @@
       <table style="table">
           <tr>
               <th>Pagado por:</th>
-              <th class="clickable">Añadir amigo</th>
               <th class="clickable">
-                  <router-link
-                    to="/add"
-                    class="badge badge-warning"
-                    >Añadir pago</router-link>
+                  <router-link to="/persons/add">Añadir amigo</router-link>
+              </th>
+              <th class="clickable">
+                  <router-link to="/expenses/add">Añadir pago</router-link>
               </th>
           </tr>
           <tr v-for="(expense, index) in expenses" :key="index">

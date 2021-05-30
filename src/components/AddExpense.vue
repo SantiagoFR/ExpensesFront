@@ -52,7 +52,7 @@ import ExpenseDataService from '@/services/ExpensesDataService'
 import ResponseData from '@/types/ResponseData'
 
 export default defineComponent({
-    name: "add-expenses",
+    name: "add-expense",
     data() {
         return {
             expense: {
@@ -70,7 +70,7 @@ export default defineComponent({
             ExpenseDataService.create(this.expense)
             .then((response: ResponseData) => {
                 console.log(response)
-                _this.$router.push('expenses')
+                _this.$router.push('/')
             })
         }
     }
