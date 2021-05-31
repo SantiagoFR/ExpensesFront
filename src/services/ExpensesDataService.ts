@@ -24,6 +24,10 @@ class ExpensesDataService {
   findByAuthor(author: string): Promise<any> {
     return http.get(`/tutorials?author=${author}`);
   }
+
+  getBalance(): Promise<any> {
+    return http.get("expenses/balance");
+  }
 }
 
 export default new ExpensesDataService();

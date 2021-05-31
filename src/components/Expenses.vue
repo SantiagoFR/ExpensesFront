@@ -1,25 +1,25 @@
 <template>
-  <div class="container">
-      <h4>Gastos compartidos</h4>
-      <table style="table">
-          <tr>
-              <th>Pagado por:</th>
-              <th class="clickable">
-                  <router-link to="/persons/add">Añadir amigo</router-link>
-              </th>
-              <th class="clickable">
-                  <router-link to="/expenses/add">Añadir pago</router-link>
-              </th>
-          </tr>
-          <tr v-for="(expense, index) in expenses" :key="index">
-              <td>{{ expense.author }}</td>
-              <td colspan="2" class="d-grid">
-                  <p>{{ expense.amount }} €</p> 
-                  <p>{{ expense.date }}</p>
-              </td>
-          </tr>
-      </table>
-  </div>
+    <div class="container">
+        <div class="flex-row align-items-center justify-content-between">
+            <h2 class="title">Gastos compartidos</h2>
+            <button class="submit-button"><router-link to="/expenses/add">Añadir gastos</router-link></button>
+        </div>
+        <table>
+            <tr>
+                <th>Pagado por:</th>
+                <th class="text-center">Descripción</th>
+                <th></th>
+            </tr>
+            <tr v-for="(expense, index) in expenses" :key="index">
+                <td>{{ expense.author }}</td>
+                <td class="text-center">{{ expense.description }}</td>
+                <td style="line-height: 0.3">
+                    <p>{{ expense.amount }} €</p> 
+                    <p>{{ fromNow(expense.date) }}</p>
+                </td>
+            </tr>
+        </table>
+    </div>
 </template>
 
 <script lang="ts">
@@ -27,6 +27,7 @@ import { defineComponent } from 'vue';
 import Expense from '@/types/Expense'
 import ExpenseDataService from '@/services/ExpensesDataService'
 import ResponseData from '@/types/ResponseData'
+import moment from 'moment'
 
 
 export default defineComponent({
@@ -44,7 +45,10 @@ export default defineComponent({
           }).catch((e: Error) => {
               console.log(e)
           })
-      } 
+      },
+      fromNow(date: Date) {
+        return moment(date).fromNow()
+      }
   },
   created() {
       this.getExpenses()
@@ -56,11 +60,19 @@ export default defineComponent({
 <style scoped>
     table {
         width: 100%;
+        border-collapse: collapse;
     }
-    table, th, td {
-        border:solid 1px #42b983
+    th {
+        background-color: #36304a;
+        color: #fff;
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
     table th.clickable:hover{
         background: #d4dbe2;
     }
+    tr:nth-child(even) {
+        background-color: #f5f5f5;
+    }
+
 </style>

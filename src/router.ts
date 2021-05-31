@@ -3,6 +3,12 @@ import { RouteRecordRaw } from "vue-router";
 
 const routes: Array<RouteRecordRaw> = [
   {
+    path: "/expenses/balance",
+    alias: "/expenses/balance",
+    name: "balance",
+    component: () => import("./components/Balance.vue"),
+  },
+  {
     path: "/",
     alias: "/expenses",
     name: "expenses",
@@ -14,9 +20,14 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("./components/AddExpense.vue"),
   },
   {
-    path: "/persons/add",
-    name: "add-person",
-    component: () => import("./components/AddPerson.vue"),
+    path: "/friends",
+    name: "friends",
+    component: () => import("./components/Friends.vue"),
+  },
+  {
+    path: "/friends/add",
+    name: "add-friend",
+    component: () => import("./components/AddFriend.vue"),
   },
 ];
 
