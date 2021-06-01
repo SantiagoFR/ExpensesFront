@@ -1,13 +1,13 @@
 <template>
     <div class="container">
         <div class="flex-row align-items-center justify-content-between">
-            <h2 class="title">Lista de amigos</h2>
-            <button class="submit-button"><router-link to="/friends/add">Añadir amigos</router-link></button>
+            <h2 class="title">Friend list</h2>
+            <button class="submit-button"><router-link to="/friends/add">Add new friend</router-link></button>
         </div>
         <table>
             <tr>
-                <th>Nombre</th>
-                <th>Apellidos</th>
+                <th>First name</th>
+                <th>Last name</th>
             </tr>
             <tr v-for="(friend, index) in friends" :key="index">
                 <td>{{ friend.firstname }}</td>

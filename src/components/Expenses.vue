@@ -1,13 +1,13 @@
 <template>
     <div class="container">
         <div class="flex-row align-items-center justify-content-between">
-            <h2 class="title">Gastos compartidos</h2>
-            <button class="submit-button"><router-link to="/expenses/add">Añadir gastos</router-link></button>
+            <h2 class="title">Shared expenses</h2>
+            <button class="submit-button"><router-link to="/expenses/add">Add expenses</router-link></button>
         </div>
         <table>
             <tr>
-                <th>Pagado por:</th>
-                <th class="text-center">Descripción</th>
+                <th>Paid by</th>
+                <th class="text-center">Description</th>
                 <th></th>
             </tr>
             <tr v-for="(expense, index) in expenses" :key="index">

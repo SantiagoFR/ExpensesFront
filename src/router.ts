@@ -20,6 +20,11 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("./components/AddExpense.vue"),
   },
   {
+    path: "/expenses/debts",
+    name: "debts",
+    component: () => import("./components/Debts.vue"),
+  },
+  {
     path: "/friends",
     name: "friends",
     component: () => import("./components/Friends.vue"),

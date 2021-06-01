@@ -26,7 +26,11 @@ class ExpensesDataService {
   }
 
   getBalance(): Promise<any> {
-    return http.get("expenses/balance");
+    return http.get("/expenses/balance");
+  }
+
+  getMinimumPayments(): Promise<any> {
+    return http.get("/expenses/minimum-payments");
   }
 }
 

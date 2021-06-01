@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <h2 class="title">Añadir amigo</h2>
+        <h2 class="title">Add new friend</h2>
         <div class="flex-row">
             <div class="input-group">
                 <label class="input-label" for="firstname">First name</label>
@@ -27,8 +27,8 @@
         </div>
 
         <div class="flex-row justify-content-center">
-            <button class="back-button" @click="$router.back">Volver</button>
-            <button style="margin-left: 5px" class="submit-button" @click="addFriend">Añadir amigo</button>
+            <button class="back-button" @click="$router.back">Back</button>
+            <button style="margin-left: 5px" class="submit-button" @click="addFriend">Add friend</button>
         </div>
     </div>
 </template>
@@ -56,7 +56,7 @@ export default defineComponent({
             FriendsDataService.create(this.friend)
             .then((response: ResponseData) => {
                 console.log(response)
-                _this.$router.push('/')
+                _this.$router.push('/friends')
             })
         }
     }

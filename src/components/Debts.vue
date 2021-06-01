@@ -1,16 +1,16 @@
 <template>
     <div class="container">
         <div class="flex-row align-items-center justify-content-between">
-            <h2 class="title">Balance</h2>
+            <h2 class="title">Minimum payments</h2>
         </div>
         <table>
             <tr>
-                <th>Full name</th>
+                <th>Payment</th>
                 <th>Amount</th>
             </tr>
-            <tr v-for="(item, index) in balance" :key="index">
+            <tr v-for="(payment, index) in payments" :key="index">
                 <td>{{ index }}</td>
-                <td :class="{ red: item < 0, green: item >= 0 }">{{ item }} €</td>
+                <td>{{ payment }} €</td>
             </tr>
         </table>
     </div>
@@ -27,21 +27,21 @@ export default defineComponent({
   name: 'Balance',
   data() {
       return {
-          balance: []
+          payments: []
       }
   },
   methods: {
-      getBalance() {
-          ExpensesDataService.getBalance()
+      getMinimumPayments() {
+          ExpensesDataService.getMinimumPayments()
           .then((response: any) => {
-              this.balance = response.data
+              this.payments = response.data
           }).catch((e: Error) => {
               console.log(e)
           })
       }
   },
   created() {
-      this.getBalance()
+      this.getMinimumPayments()
   }
 });
 </script>

@@ -1,9 +1,10 @@
 <template>
   <div id="app">
     <ul class="horizontal" @click="url">
-      <li style="margin-left: 10%"><router-link to="/" :class="{ active: url('/') }">Home</router-link></li>
+      <li style="margin-left: 10%"><router-link to="/" :class="{ active: url('/') }">Expenses</router-link></li>
       <li><router-link to="/expenses/balance" :class="{ active: url('/expenses/balance') }">Balance</router-link></li>
-      <li><router-link to="/friends" :class="{ active: url('/friends') }">Lista de amigos</router-link></li>
+      <li><router-link to="/expenses/debts" :class="{ active: url('/expenses/debts') }">Debts</router-link></li>
+      <li><router-link to="/friends" :class="{ active: url('/friends') }">Friend list</router-link></li>
     </ul>
     <router-view />
   </div>

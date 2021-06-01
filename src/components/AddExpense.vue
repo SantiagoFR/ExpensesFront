@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <h2 class="title">Añadir nuevo gasto</h2>
+        <h2 class="title">Add new expenses</h2>
         <div class="flex-row">
             <div class="input-group">
                 <label class="input-label" for="author">Author</label>
@@ -41,8 +41,8 @@
         </div>
 
         <div class="flex-row justify-content-center">
-            <button class="back-button" @click="$router.back">Volver</button>
-            <button style="margin-left: 5px" class="submit-button" @click="addExpense">Enviar gasto</button>
+            <button class="back-button" @click="$router.back">Back</button>
+            <button style="margin-left: 5px" class="submit-button" @click="addExpense">Create expense</button>
         </div>
     </div>
 </template>
